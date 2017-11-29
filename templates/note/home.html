@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  {% for note in notes %}
+    <article id="{{ note.id }}" class="article-list">
+      <div class="article-head">
+        <h1 class="article-title">
+          {{ note.title }}
+        </h1>
+        <div class="article-meta">
+          <span class="author">
+            作者：
+            <a href="#">{{ note.author.username }}</a>
+          </span>
+          ·
+          <span class="article-date">{{ note.create_time|date:'Y年m月d日' }}</span>
+        </div>
+      </div>
+      <div class="article-content">
+        <p>
+          {{ note.context|safe }}
+        </p>
+      </div>
+      <div class="article-detaillink">
+        <a href="{% url 'note_detail' note.id %}" class="btn btn-default">查看全文</a>
+      </div>
+      <footer class="article-footer clearfix">
+        <div class="pull-left tag-list">
+          <i class="glyphicon glyphicon-tags"></i>
+          <a href="#">Python</a>，
+          <a href="#">Javascript</a>
+        </div>
+      </footer>
+    </article>
+  {% endfor %}
+{% endblock %}

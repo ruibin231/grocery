@@ -1,0 +1,123 @@
+{% load staticfiles %}
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <title>{{ title|default:'首页' }}</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="{% static 'libs/bootstrap/css/bootstrap.min.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/note.css' %}">
+  {% block styles %}
+  {% endblock %}
+  <script type="text/javascript" src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'libs/bootstrap/js/bootstrap.min.js' %}"></script>
+  {% block scripts %}
+  {% endblock %}
+</head>
+<body>
+  <nav class="navbar navbar-default navbar-static-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="{% url 'home' %}">首页</a>
+    <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li class="active">
+          <a href="#">
+            Python <span class="sr-only">(current)</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">.......</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+{% block container %}
+<div class="container">
+  <div class="row">
+    <main class="col-md-8 content">
+      <!-- 内容主体 -->
+      {% block content %}
+        <article id="001" class="article-list">
+          <div class="article-head">
+            <h1 class="article-title">
+              我的文章
+            </h1>
+            <div class="article-meta">
+              <span class="author">
+                作者：
+                <a href="#">贾瑞宾</a>
+              </span>
+              ·
+              <span class="article-date">2017年8月9日</span>
+            </div>
+          </div>
+          <div class="article-content">
+            <p>
+              随着 Ghost 1.0 和 Hemingway Mode 的发布，今天我们又发布了“自定义文章摘要”功能。 默认情况下，Ghost 会截取文章正文开头部分的文字（一般是55个字）作为文章摘要并显示在文章归档列表中。摘要有助于读者快速了解文章所要表达的内容。但是，如果你希望自己定
+            </p>
+          </div>
+          <div class="article-detaillink">
+            <a href="#" class="btn btn-default">查看全文</a>
+          </div>
+          <footer class="article-footer clearfix">
+            <div class="pull-left tag-list">
+              <i class="glyphicon glyphicon-tags"></i>
+              <a href="#">Python</a>，
+              <a href="#">Javascript</a>
+            </div>
+          </footer>
+        </article>
+        <article id="001" class="article-list">
+          <div class="article-head">
+            <h1 class="article-title">
+              我的文章
+            </h1>
+            <div class="article-meta">
+              <span class="author">
+                作者：
+                <a href="#">贾瑞宾</a>
+              </span>
+              ·
+              <span class="article-date">2017年8月9日</span>
+            </div>
+          </div>
+          <div class="article-content">
+            <p>
+              随着 Ghost 1.0 和 Hemingway Mode 的发布，今天我们又发布了“自定义文章摘要”功能。 默认情况下，Ghost 会截取文章正文开头部分的文字（一般是55个字）作为文章摘要并显示在文章归档列表中。摘要有助于读者快速了解文章所要表达的内容。但是，如果你希望自己定
+            </p>
+          </div>
+          <div class="article-detaillink">
+            <a href="#" class="btn btn-default">查看全文</a>
+          </div>
+          <footer class="article-footer clearfix">
+            <div class="pull-left tag-list">
+              <i class="glyphicon glyphicon-tags"></i>
+              <a href="#">Python</a>，
+              <a href="#">Javascript</a>
+            </div>
+          </footer>
+        </article>
+      {% endblock %}
+    </main>
+    <aside class="col-md-4 sidebar">
+      <div class="widget">
+        <h4 class="title">标签</h4>
+        <div class="tags">
+          <a href="#" class="btn btn-default">Python</a>
+          <a href="#" class="btn btn-default">Javascript</a>
+          <a href="#" class="btn btn-default">shell</a>
+          <a href="#" class="btn btn-default">css</a>
+        </div>
+      </div>
+      <div class="widget">
+        <h4 class="title">热门文章</h4>
+        <div class="tags">
+          <a href="#" class="">Python</a>
+        </div>
+      </div>
+    </aside>
+  </div>
+</div>
+{% endblock %}
+</body>
+</html>
