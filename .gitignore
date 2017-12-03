@@ -1,3 +1,5 @@
 /.DS_Store
 *.pyc
 grocery/local_settings.py
+/node_modules
+package-lock.json
