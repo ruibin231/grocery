@@ -38,6 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'grocery.note',
+    'grocery.accounts',
+    'grocery.property',
+    'grocery.wishlists',
+    'grocery.dashboard',
 ]
 
 MIDDLEWARE = [
