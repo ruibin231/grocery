@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'grocery.note',
     'grocery.accounts',
-    'grocery.property',
+    'grocery.properties',
     'grocery.wishlists',
     'grocery.dashboard',
 ]
@@ -132,6 +132,9 @@ STATIC_ROOT = location('staticfiles')
 STATICFILES_DIRS = (
     location('statics'),
 )
+
+MEDIA_ROOT = location('media')
+MEDIA_URL = '/media/'
 
 try:
     from grocery.local_settings import *
