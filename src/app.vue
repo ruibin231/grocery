@@ -1,17 +1,13 @@
 <template>
-  <div>
-    <p>资产推介平台</p>
-  </div>
+    <!-- 各个页面 -->
+    <router-view></router-view>
 </template>
+
 <script>
 
-  export default {
-    data() {
-      return {}
-    },
-    components: {
-    },
-    methods: {
-    }
+export default {
+  data () {
+    return {}
   }
+}
 </script>

@@ -1,5 +1,9 @@
 var path = require('path');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
+function resolve(dir) {
+  return path.resolve(__dirname, dir)
+}
+
 
 var config = {
     entry: {
@@ -8,6 +12,15 @@ var config = {
     output: {
         path: path.join(__dirname, 'statics/js'),
         filename: '[name].js'
+    },
+    resolve: {
+      extensions: ['.js', '.vue', '.json'],
+      alias: {
+        'vue$': 'vue/dist/vue.common.js',
+        'src': resolve('src'),
+        'components': resolve('src/components'),
+        'pages': resolve('src/pages')
+      }
     },
     module: {
         rules: [

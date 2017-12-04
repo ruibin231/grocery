@@ -32,10 +32,10 @@ module.exports = merge(webpackBaseConfig, {
             }
         }),
         // 提取模板，并保存入口 html 文件
-        new HtmlWebpackPlugin({
-            filename: '../../templates/index.html',
-            template: './src/index.html',
-            inject: false
-        })
+        // new HtmlWebpackPlugin({
+        //     filename: '../../templates/index.html',
+        //     template: './src/index.html',
+        //     inject: false
+        // })
     ]
 });
