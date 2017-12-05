@@ -55,7 +55,7 @@ var config = {
         ]
     },
     plugins: [
-        new ExtractTextPlugin("./statics/css/main.css")
+        new ExtractTextPlugin("../css/main.css")
     ]
 };
 
