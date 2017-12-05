@@ -15,8 +15,7 @@ module.exports = merge(webpackBaseConfig, {
     // },
     plugins: [
         new ExtractTextPlugin({
-            // 提取 css，并重命名为带有 20 位 hash 值的唯一文件
-            filename: '[name].css',
+            filename: '../css/[name].css',
             allChunks: true
         }),
         // 定义当前 node 环境为生产环境
