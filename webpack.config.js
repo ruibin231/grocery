@@ -49,6 +49,10 @@ var config = {
                 })
             },
             {
+                test: /\.less$/,
+                loader: "less-loader"
+            },
+            {
                 test: /\.(gif|jpg|png|woff|svg|eot|ttf)\??.*$/,
                 loader: 'url-loader?limit=1024'
             }

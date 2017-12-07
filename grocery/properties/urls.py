@@ -1,6 +1,7 @@
 from django.conf.urls import url
-from grocery.property.views import home
+from grocery.properties import views
 
 urlpatterns = [
-    url(r'^$', new_note, name='home'),
+    url(r'^add', views.categroy_add, name='categroy_add'),
+    # url(r'^login/$', views.user_login),
 ]
