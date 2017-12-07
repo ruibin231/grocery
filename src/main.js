@@ -1,3 +1,4 @@
+// import './common/rem'
 import Vue from 'vue'
 import App from './app.vue'
 import axios from './http'
@@ -13,6 +14,12 @@ new Vue({
     router,
     template: '<App/>',
     components: {
-      App
+        App
     }
 })
+
+// new Vue({
+//     router,
+//     el: '#app',
+//     render: h => h(App)
+// });

@@ -9,7 +9,7 @@ class Category(models.Model):
     name = models.CharField(max_length=16, unique=True,
                             verbose_name=u'资产类型')
 
-    class Mate:
+    class Meta:
         verbose_name = verbose_name_plural = u'资产分类'
 
     def __unicode__(self):
@@ -41,12 +41,11 @@ class Assets(models.Model):
 
     pub_time = models.DateTimeField(auto_now_add=True, verbose_name=u'发布时间')
 
-    class Mate:
+    class Meta:
         verbose_name = verbose_name_plural = u'资产信息'
 
     def __unicode__(self):
         return self.title
-
 
 
 class AssetsImg(models.Model):
@@ -55,17 +54,17 @@ class AssetsImg(models.Model):
     middle = models.ImageField(upload_to='%Y/%m/%d/')
     small = models.ImageField(upload_to='%Y/%m/%d/')
 
-    class Mate:
+    class Meta:
         verbose_name = verbose_name_plural = u'资产图片'
 
 
 class Comment(models.Model):
     author = models.ForeignKey(User, verbose_name=u'评论人')
-    asserts = models.ForeignKey(Assets, verbose_name=u'资产')
+    assets = models.ForeignKey(Assets, verbose_name=u'资产')
     content = models.TextField(verbose_name=u'评论内容')
     c_time = models.DateTimeField(auto_now_add=True, verbose_name=u'评论时间')
 
-    class Mate:
+    class Meta:
         verbose_name = verbose_name_plural = u'资产评论'
 
     def __unicode__(self):

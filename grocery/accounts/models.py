@@ -10,7 +10,7 @@ class UserProfile(models.Model):
     user = models.OneToOneField(User)
     avatar = models.CharField(max_length=256, verbose_name=u'头像',
                               blank=True, null=True)
-    mobile = models.IntegerField(verbose_name=u'手机号')
+    mobile = models.CharField(max_length=15,verbose_name=u'手机号')
     nick_name = models.CharField(max_length=32, unique=True,
                                  verbose_name=u'昵称')
     lat = models.FloatField(blank=True, null=True, verbose_name=u'经度')
@@ -19,7 +19,7 @@ class UserProfile(models.Model):
                                       blank=True, null=True)
     open_id = models.CharField(max_length=32)
 
-    class Mate:
+    class Meta:
         verbose_name = verbose_name_plural = u'用户信息'
 
     def __unicode__(self):
@@ -32,7 +32,7 @@ class BrowseHistory(models.Model):
     title = models.CharField(max_length=32, verbose_name=u'资产标题')
     time = models.DateTimeField(auto_now_add=True, verbose_name=u'访问时间')
 
-    class Mate:
+    class Meta:
         verbose_name = verbose_name_plural = u'用户访问历史'
 
     def __unicode__(self):

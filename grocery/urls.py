@@ -17,6 +17,8 @@ from django.conf.urls import url, include
 from django.contrib import admin
 from grocery.note.views import user_login, user_logout
 from grocery.properties.views import home
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     url(r'^$', home, name='home'),
@@ -24,4 +26,8 @@ urlpatterns = [
     url(r'^note/', include('grocery.note.urls')),
     url(r'^login/$', user_login, name='login'),
     url(r'^logout/$', user_logout, name='logout'),
-]
+
+    url(r'^user/', include('grocery.accounts.urls')),
+    url(r'^categroy/', include('grocery.properties.urls')),
+
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
