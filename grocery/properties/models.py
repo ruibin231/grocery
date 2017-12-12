@@ -1,8 +1,10 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
+import json
 from django.db import models
 from django.contrib.auth.models import User
+from django.forms.models import model_to_dict
 
 
 class Category(models.Model):
@@ -46,6 +48,24 @@ class Assets(models.Model):
 
     def __unicode__(self):
         return self.title
+
+    @property
+    def json_data(self):
+        dit_data = model_to_dict(self)
+        dit_data['category'] = self.cate_name
+        dit_data['imgs'] = self.get_imgs()
+        dit_data['spot'] = json.loads(dit_data['spot'])
+        dit_data['parms'] = json.loads((dit_data['parms']))
+        return dit_data
+
+    @property
+    def cate_name(self):
+        return self.category.name
+
+    def get_imgs(self, size='large'):
+        imgs = self.assetsimg_set.all()
+        return [getattr(img, size).url for img in imgs]
+
 
 
 class AssetsImg(models.Model):
