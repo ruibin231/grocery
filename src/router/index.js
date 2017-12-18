@@ -1,20 +1,26 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Base from 'pages/Base'
-import PropertyList from 'pages/PropertyList'
-import AssetDetail from 'pages/AssetDetail'
+import Login from 'pages/Login'
+import AssetList from 'pages/asset/AssetList'
 
 Vue.use(Router)
 
 export default new Router({
-    routes: [{
-        path: '/',
-        name: '首页',
-        component: Base,
-        redirect: '/home',
-        children: [
-            { path: 'home', component: PropertyList, name: '资产列表' },
-            { path: 'asset_detail', component: AssetDetail, name: '资产详情' },
-        ]
-    }]
+  routes: [
+    {
+      path: '/login',
+      name: '登入',
+      component: Login
+    },
+    {
+      path: '/',
+      name: '资产管理',
+      component: Base,
+      redirect: 'assets',
+      children: [
+        {path: 'assets', component: AssetList, name: '所有资产'}
+      ]
+    }
+  ]
 })

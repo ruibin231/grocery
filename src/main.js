@@ -3,23 +3,21 @@ import Vue from 'vue'
 import App from './app.vue'
 import axios from './http'
 import router from './router'
-import Vant from 'vant'
-import 'vant/lib/vant-css/index.css'
+import store from './store/store'
+import ElementUI from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css'
+import 'font-awesome/css/font-awesome.min.css'
 
-Vue.use(Vant)
+Vue.use(ElementUI)
+
+Vue.prototype.axios = axios
 
 new Vue({
     el: '#app',
-    axios,
     router,
+    store,
     template: '<App/>',
     components: {
         App
     }
 })
-
-// new Vue({
-//     router,
-//     el: '#app',
-//     render: h => h(App)
-// });

@@ -53,8 +53,20 @@ var config = {
                 loader: "less-loader"
             },
             {
-                test: /\.(gif|jpg|png|woff|svg|eot|ttf)\??.*$/,
-                loader: 'url-loader?limit=1024'
+                test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
+                loader: 'url-loader',
+                options: {
+                    limit: 10000,
+                    name: '../img/[name].[hash:8].[ext]'
+                }
+            },
+            {
+                test: /\.(woff2?|eot|ttf|otf|svg)(\?.*)?$/,
+                loader: 'url-loader',
+                options: {
+                  limit: 10000,
+                  name: '../fonts/[name].[hash:8].[ext]'
+                }
             }
         ]
     },
