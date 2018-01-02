@@ -6,6 +6,6 @@ from grocery.accounts import views
 
 
 urlpatterns = [
-    url(r'^create/$', views.create_user),
-    url(r'^login/$', views.user_login),
+    # url(r'^create/$', views.create_user),
+    # url(r'^login/$', views.user_login),
 ]
